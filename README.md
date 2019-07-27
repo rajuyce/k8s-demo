@@ -9,7 +9,7 @@ Steps
 3. Launch EKS cluster in AWS
 4. Deploy Jenkins on EKS cluster
 5. Configure Jenkins pipeline job
-6. Deploy sample application
+6. Deploy Application
 7. Validate Application
 8. Delete all the deployments and services from EKS cluster
 9. Destroy EKS cluster with Terraform 
@@ -101,8 +101,6 @@ Set DockerHub Repository Environment Variables
  
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Environment_Variables.PNG)
  
-# 6. Deploy sample application
-
 Create New Job
  
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Create%20New%20job.PNG)
@@ -124,6 +122,8 @@ Select Source Code Repository
 Verify Jenkinsfile is validated successfully
  
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Jenkinsfilescan.PNG)
+
+# 6. Deploy Application
 
 Run Pipeline Job
  
