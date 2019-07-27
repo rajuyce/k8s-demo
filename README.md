@@ -14,7 +14,7 @@ Steps
 8. Delete all the deployments and services from EKS cluster
 9. Destroy EKS cluster with Terraform 
 
-  #   1. Preparation.
+#   1. Preparation.
 
 Install terrafrom
 
@@ -78,31 +78,82 @@ kubectl apply -f aws-auth.yml
 # 4. Deploy Jenkins on EKS cluster
 ```bash
 cd ../../../jenkins/
- kubectl create -f jenkins.yml
- ```
- Wait for few minutes till pod get join to load balancer 
- Get jenkins loadbalancer URL from EKS
- ```bash
- kubectl get services |grep jenkins
- ```
+kubectl create -f jenkins.yml
+```
+Wait for few minutes till pod get join to load balancer 
+Get jenkins loadbalancer URL from EKS
+```bash
+kubectl get services |grep jenkins
+```
+Access Jenkins Dashboard
+
+Create DitHub Credentials Account in Jenkins Dashboad
  
- ```bash
+![alt text](https://github.com/ynraju4/Readme_Images/blob/master/GitHub.PNG)
+ 
+Create DockerHub Credentials Account in Jenkins Dashboad
+ 
+![alt text](https://github.com/ynraju4/Readme_Images/blob/master/dockerhub.PNG)
+ 
+Set DockerHub Repository Environment Variables
+ 
+![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Environment_Variables.PNG)
+ 
+Create New Job
+ 
+![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Create%20New%20job.PNG)
+ 
+Enter New Job Name
+ 
+![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Job%20Name.PNG)
+ 
+Select Job Type
+ 
+![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Job%20Type.PNG)
+ 
+Select Source Code Repository Type
+ 
+![alt text](https://github.com/ynraju4/Readme_Images/blob/master/add%20source.PNG)
+ 
+Select Source Code Repository
+ 
+![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Git%20Soruce.PNG)
+ 
+Verify Jenkinsfile is validated successfully
+ 
+![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Jenkinsfilescan.PNG)
+ 
+Run Pipeline Job
+ 
+![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Run%20Job.PNG)
+ 
+![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Pipeline%20Log.PNG)
+ 
+Validate Application Access
+ 
+![alt text](https://github.com/ynraju4/Readme_Images/blob/master/DryRUN%20No.1.PNG)
+ 
+Edit Source Code
+ 
+![alt text](https://github.com/ynraju4/Readme_Images/blob/master/edit_index.PNG)
+ 
+Run Jenkins pipeline job and Validate Application Access again
+ 
+![alt text](https://github.com/ynraju4/Readme_Images/blob/master/DryRUN%20No.2.PNG)
+ 
+```bash
 kubectl get services |grep k8s-app
 ```
 # 8. Delete all the deployments and services from EKS cluster
- ```bash
+```bash
 kubectl delete services jenkins k8s-app
-
 kubectl delete deployments jenkins k8s-app
 ```
 # 9. Destroy EKS cluster with Terraform 
- ```bash
+```bash
 cd ../terraform-aws-eks/k8s/eks/
 terraform destroy -force
 ```
-
- 
-
  
 
 
