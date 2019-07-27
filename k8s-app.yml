@@ -1,20 +1,20 @@
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
-  name: eks-app
+  name: k8s-app
 spec:
   selector:
     matchLabels:
-      app: eks-app
+      app: k8s-app
   replicas: 3 # tells deployment to run 2 pods matching the template
   template:
     metadata:
       labels:
-        app: eks-app
+        app: k8s-app
         tier: frontend
     spec:
       containers:
-      - name: eks-app
+      - name: k8s-app
         image: ${REPOSITORY_TAG}
         ports:
         - containerPort: 8080
@@ -22,10 +22,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: eks-app
+  name: k8s-app
 spec:
   selector:
-    app: eks-app
+    app: k8s-app
     tier: frontend
   ports:
   - name: http

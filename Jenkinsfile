@@ -28,15 +28,15 @@ pipeline {
            sh 'docker image build -t ${REPOSITORY_TAG} .'
          }
       }
-     stage('Push Docker Image') {
-	steps{
-	   withCredentials([usernamePassword( credentialsId: 'dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-           sh "docker login -u ${USERNAME} -p ${PASSWORD}"
-           sh "docker push ${REPOSITORY_TAG}"
-           }      
-        }
-     }
-      stage('Deploy Application to Cluster') {
+      stage('Push Docker Image') {
+  	 steps{
+	    withCredentials([usernamePassword( credentialsId: 'dockerhub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+            sh "docker login -u ${USERNAME} -p ${PASSWORD}"
+            sh "docker push ${REPOSITORY_TAG}"
+            }      
+         }
+      }
+      stage('Deploy Application on Cluster') {
           steps {
                     sh 'envsubst < ${WORKSPACE}/deploy.yaml | kubectl apply -f -'
           }
