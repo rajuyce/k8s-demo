@@ -1,8 +1,10 @@
 #Pull base imdage
-From tomcat:8-jre8
+From tomcat:9-jre11
 
 #Maintainer
-MAINTAINER "ynraju4@gmail.com"
+MAINTAINER Nagarju Yarlagadda "ynraju4@gmail.com"
+
+EXPOSE 8080
 
 RUN rm -rf /usr/local/tomcat/webapps/*
 
