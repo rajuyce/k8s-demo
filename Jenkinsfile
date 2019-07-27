@@ -23,7 +23,7 @@ pipeline {
             sh '''mvn clean package'''
          }
       }
-      stage('Build Docker Image') {
+      stage('Create Docker Image') {
          steps {
            sh 'docker image build -t ${REPOSITORY_TAG} .'
          }
@@ -41,7 +41,7 @@ pipeline {
                     sh 'envsubst < ${WORKSPACE}/k8s-app.yml | kubectl apply -f -'
           }
       }
-      stage('Remove Unused Docker Image') {
+      stage('Purge Unused Docker Image') {
          steps{
             sh "docker rmi ${REPOSITORY_TAG}"
          }
