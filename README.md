@@ -16,8 +16,18 @@ Steps
 
   #   1. Preparation.
 
-Install terrafrom in your local machine or in baisten host.
-Configure AWS with your AWS access key and secret key
+Install terrafrom
+
+```bash
+wget https://releases.hashicorp.com/terraform/0.12.5/terraform_0.12.5_linux_amd64.zip
+unzip terraform_0.12.5_linux_amd64.zip
+mv terraform /usr/local/bin
+```
+Configure AWS account which has AdminAccess for all resources
+
+```bash
+aws configure
+```
 
 Install kubectl 
 ```bash
@@ -56,14 +66,15 @@ Take environment configuration to back and soure the configuration to access the
 terraform output kubectl_config > kubeconfig
 mkdir -p $HOME/.kube
 cp kubeconfig $HOME/.kube/config
+
 #Note: Please wait for few minutes until nodes health is ready state and check nodes health
 kubectl get no
 
-#configure aws authentication
-
+#configure aws authenticater
 terraform output config_map_aws_auth > aws-auth.yml
 kubectl apply -f aws-auth.yml
 ```
+
 # 4. Deploy Jenkins on EKS cluster
 ```bash
 cd ../../../jenkins/
@@ -71,18 +82,20 @@ cd ../../../jenkins/
  ```
  Wait for few minutes till pod get join to load balancer 
  Get jenkins loadbalancer URL from EKS
+ ```bash
  kubectl get services |grep jenkins
+ ```
  
  ```bash
 kubectl get services |grep k8s-app
 ```
-
+#8. Delete all the deployments and services from EKS cluster
  ```bash
 kubectl delete services jenkins k8s-app
 
 kubectl delete deployments jenkins k8s-app
 ```
-
+# 9. Destroy EKS cluster with Terraform 
  ```bash
 cd ../terraform-aws-eks/k8s/eks/
 terraform destroy -force
