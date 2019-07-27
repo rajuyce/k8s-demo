@@ -4,8 +4,8 @@ pipeline {
      // You must set the following environment variables
      // ORGANIZATION_NAME
      // DOCKERHUB_USERNAME  (it doesn't matter if you don't have one)
-     SERVICE_NAME = "k8s-demo"
-     REPOSITORY_TAG="${ORGANIZATION_NAME}/${SERVICE_NAME}:${BUILD_ID}"
+     // REPOSITORY_NAME
+     REPOSITORY_TAG="${ORGANIZATION_NAME}/${REPOSITORY_NAME}:${BUILD_ID}"
      registry = "${ORGANIZATION_NAME}/${SERVICE_NAME}"
      registryCredential = 'dockerhub'
      dockerImage = ''
