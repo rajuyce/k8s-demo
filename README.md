@@ -85,6 +85,8 @@ Get jenkins loadbalancer URL from EKS
 ```bash
 kubectl get services |grep jenkins
 ```
+# 5. Configure Jenkins pipeline job
+
 Access Jenkins Dashboard
 
 Create DitHub Credentials Account in Jenkins Dashboad
@@ -99,15 +101,15 @@ Set DockerHub Repository Environment Variables
  
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Environment_Variables.PNG)
  
+# 6. Deploy sample application
+
 Create New Job
  
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Create%20New%20job.PNG)
- 
-Enter New Job Name
- 
+
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Job%20Name.PNG)
  
-Select Job Type
+Select Job Type : Multibranch Pipeline
  
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Job%20Type.PNG)
  
@@ -122,14 +124,14 @@ Select Source Code Repository
 Verify Jenkinsfile is validated successfully
  
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Jenkinsfilescan.PNG)
- 
+
 Run Pipeline Job
  
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Run%20Job.PNG)
  
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Pipeline%20Log.PNG)
  
-Validate Application Access
+# 7. Validate Application
  
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/DryRUN%20No.1.PNG)
  
