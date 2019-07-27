@@ -117,12 +117,11 @@ metadata:
   name: jenkins
   namespace: default
 spec:
-  type: NodePort
+  type: LoadBalancer 
   ports:
     - name: ui
-      port: 8080
+      port: 80
       targetPort: 8080
-      nodePort: 31000
     - name: jnlp
       port: 50000
       targetPort: 50000
