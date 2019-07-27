@@ -89,7 +89,7 @@ cd ../../../jenkins/
  ```bash
 kubectl get services |grep k8s-app
 ```
-#8. Delete all the deployments and services from EKS cluster
+# 8. Delete all the deployments and services from EKS cluster
  ```bash
 kubectl delete services jenkins k8s-app
 
