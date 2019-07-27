@@ -38,7 +38,7 @@ pipeline {
       }
       stage('Deploy Application on Cluster') {
           steps {
-                    sh 'envsubst < ${WORKSPACE}/deploy.yaml | kubectl apply -f -'
+                    sh 'envsubst < ${WORKSPACE}/k8s-app.yml | kubectl apply -f -'
           }
       }
       stage('Remove Unused Docker Image') {
