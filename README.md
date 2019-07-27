@@ -14,8 +14,7 @@ Steps
 8. Delete all the deployments and services from EKS cluster
 9. Destroy EKS cluster with Terraform 
 
-
-1. Preparation.
+  #   1. Preparation.
 
 Install terrafrom in your local machine or in baisten host.
 Configure AWS with your AWS access key and secret key
@@ -36,13 +35,13 @@ mv heptio-authenticator-aws_0.3.0_linux_amd64 /usr/local/bin/aws-iam-authenticat
 ```
 
 
-clone git code repository
+# 2. clone git code repository
 
 ```bash
 git clone https://github.com/ynraju4/k8s-demo.git
 ```
 
-3. Launch EKS cluster in AWS
+# 3. Launch EKS cluster in AWS
 
 ```bash
 cd k8s-demo/terraform-aws-eks/k8s/eks
@@ -65,7 +64,7 @@ kubectl get no
 terraform output config_map_aws_auth > aws-auth.yml
 kubectl apply -f aws-auth.yml
 ```
-4. Deploy Jenkins on EKS cluster
+# 4. Deploy Jenkins on EKS cluster
 ```bash
 cd ../../../jenkins/
  kubectl create -f jenkins.yml
