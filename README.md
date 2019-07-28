@@ -61,7 +61,7 @@ terraform apply
 ```
 #Type "yes" and Enter in Terrform prompt to provision AWS resources for EKS
 
-Take environment configuration to back and soure the configuration to access the cluster by kubectl 
+Take environment configuration to backup and soure the configuration to access the K8s cluster by kubectl 
 
 ```bash
 terraform output kubectl_config > kubeconfig
