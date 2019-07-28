@@ -57,8 +57,9 @@ git clone https://github.com/ynraju4/k8s-demo.git
 cd k8s-demo/terraform-aws-eks/k8s/eks
 terraform init
 terraform plan #Note: Please check how many resources are going to create on AWS for EKS
-terraform apply #Cross verify resources list, type yes and enter
+terraform apply 
 ```
+#Type "yes" and Enter in Terrform prompt to provision AWS resources for EKS
 
 Take environment configuration to back and soure the configuration to access the cluster by kubectl 
 
@@ -176,9 +177,9 @@ kubectl delete deployments jenkins k8s-app
 
 ```bash
 cd ../terraform-aws-eks/k8s/eks/
-terraform destroy #Type "yes" and Enter to Decomission all AWS resources
+terraform destroy 
 ```
-
+#Type "yes" and Enter in Terrform prompt to Decomission all AWS resources
 
 
 
