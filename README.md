@@ -67,7 +67,7 @@ terraform output kubectl_config > kubeconfig
 mkdir -p $HOME/.kube
 cp kubeconfig $HOME/.kube/config
 
-#Note: Please wait for few minutes until nodes health is ready state and check nodes health
+#Note: Please wait for few minutes until nodes health is ready state
 kubectl get no
 
 #configure aws authenticater
@@ -76,20 +76,34 @@ kubectl apply -f aws-auth.yml
 ```
 
 # 4. Deploy Jenkins on EKS cluster
+
+Note: It's recommended to use Internal LoadBalancer for NodePort to expose Jenkins services
+
 ```bash
 cd ../../../jenkins/
 kubectl create -f jenkins.yml
 ```
-Wait for few minutes till pod get join to load balancer 
+Please wait for few minutes till pod get create and Nodes join LoadBalancer
+
+```bash
+kubectl get all
+```
+
 Get jenkins loadbalancer URL from EKS
+
 ```bash
 kubectl get services |grep jenkins
 ```
+
 # 5. Configure Jenkins pipeline job
 
-Access Jenkins Dashboard
+Access Jenkins Dashboard with Jenkins Loadbalancer
+
+![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Jenkins_Home_Page.PNG)
 
 Create DitHub Credentials Account in Jenkins Dashboad with ID: GitHub
+
+Navigation: Jenkins ➭ Credentials ➭ System ➭ Global credentials (unrestricted) ➭ Add Credentials
  
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/GitHub.PNG)
  
@@ -98,6 +112,8 @@ Create DockerHub Credentials Account in Jenkins Dashboad with ID: dockerhub
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/dockerhub.PNG)
  
 Set DockerHub Repository Environment Variables
+
+Navigation: Jenkins ➭ Manage Jenkins ➭ Configure System
 
 Note: Please make sure you have Docker Hub account with same <ORGANIZATION_NAME>/<REPOSITORY_NAME>
 
@@ -151,9 +167,6 @@ Run Jenkins pipeline job and Validate Application Access again
  
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/DryRUN%20No.2.PNG)
  
-```bash
-kubectl get services |grep k8s-app
-```
 # 8. Delete all the deployments and services from EKS cluster
 ```bash
 kubectl delete services jenkins k8s-app
