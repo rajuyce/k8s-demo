@@ -4,7 +4,7 @@
 Note: Please Fork k8s-demo Repository to your GitHub account to execute all the steps without any issues.
 
 Steps
-1. Prparation
+1. Preparation
 2. Clone git code repository
 3. Launch EKS cluster in AWS
 4. Deploy Jenkins on EKS cluster
@@ -99,9 +99,9 @@ Create DockerHub Credentials Account in Jenkins Dashboad with ID: dockerhub
  
 Set DockerHub Repository Environment Variables
 
-![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Environment_Variables.PNG)
-
 Note: Please make sure you have Docker Hub account with same <ORGANIZATION_NAME>/<SERVICE_NAME>
+
+![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Environment_Variables.PNG)
 
 Create New Job
  
