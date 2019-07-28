@@ -179,7 +179,7 @@ kubectl delete deployments jenkins k8s-app
 cd ../terraform-aws-eks/k8s/eks/
 terraform destroy 
 ```
-#Type "yes" and Enter in Terrform prompt to Decomission all AWS resources
+#Type "yes" and Enter in Terrform prompt to Decomission all AWS resources created for EKS
 
 
 
