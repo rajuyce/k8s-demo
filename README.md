@@ -56,6 +56,7 @@ git clone https://github.com/ynraju4/k8s-demo.git
 ```
 
 # 3. Launch EKS cluster in AWS
+###### Worker Nodes Count: 4
 
 ```bash
 cd k8s-demo/terraform-aws-eks/k8s/eks
