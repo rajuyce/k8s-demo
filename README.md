@@ -99,7 +99,7 @@ Create DockerHub Credentials Account in Jenkins Dashboad with ID: dockerhub
  
 Set DockerHub Repository Environment Variables
 
-Note: Please make sure you have Docker Hub account with same <ORGANIZATION_NAME>/<SERVICE_NAME>
+Note: Please make sure you have Docker Hub account with same <ORGANIZATION_NAME>/<REPOSITORY_NAME>
 
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Environment_Variables.PNG)
 
