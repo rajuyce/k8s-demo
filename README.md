@@ -1,5 +1,5 @@
 
-# This is a demo for deploying sample application on Non Production Kubernetes Cluster
+# This is a demo for deploying sample application on Non-Production Kubernetes Cluster
 
 <img src="https://github.com/ynraju4/Readme_Images/blob/master/og-image-8b3e4f7d%20(1).png" width="150" height="150"><img src="https://github.com/ynraju4/Readme_Images/blob/master/eks-orig.jpg" width="285" height="150">
 
@@ -18,7 +18,7 @@ Note: Please Fork k8s-demo Repository to your GitHub account to execute all the 
 
 #   1. Preparation.
 
-#### Install terrafrom
+#### Install Terraform
 
 ```bash
 wget https://releases.hashicorp.com/terraform/0.12.5/terraform_0.12.5_linux_amd64.zip
@@ -64,9 +64,9 @@ terraform plan #Note: Please check how many resources are going to create on AWS
 terraform apply 
 ```
 
-###### Type "yes" and Enter in Terrform prompt to provision AWS resources for EKS
+###### Type "yes" and Enter in Terraform prompt to provision AWS resources for EKS
 
-#### Take environment configuration to backup and soure the configuration to access the K8s cluster by kubectl 
+#### Take environment configuration to backup and source the configuration to access the K8s cluster by kubectl 
 
 ```bash
 terraform output kubectl_config > kubeconfig
@@ -76,7 +76,7 @@ cp kubeconfig $HOME/.kube/config
 #Note: Please wait for few minutes until nodes health is ready state
 kubectl get no
 
-#configure aws authenticater
+#Configure aws authenticator
 terraform output config_map_aws_auth > aws-auth.yml
 kubectl apply -f aws-auth.yml
 ```
@@ -96,7 +96,7 @@ kubectl create -f jenkins.yml
 kubectl get all
 ```
 
-Get jenkins loadbalancer URL from EKS
+#### Get Jenkins LoadBalancer URL from EKS
 
 ```bash
 kubectl get services |grep jenkins
@@ -104,21 +104,21 @@ kubectl get services |grep jenkins
 
 # 5. Configure Jenkins pipeline job
 
-#### Access Jenkins Dashboard with Jenkins Loadbalancer
+#### Access Jenkins Dashboard with Jenkins LoadBalancer
 
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Jenkins_Home_Page.PNG)
 
-#### Create DitHub Credentials Account in Jenkins Dashboad with ID: GitHub
+#### Create DitHub Credentials Account in Jenkins Dashboard with ID: GitHub
 
 Navigation: Jenkins ➭ Credentials ➭ System ➭ Global credentials (unrestricted) ➭ Add Credentials
  
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/GitHub.PNG)
  
-#### Create DockerHub Credentials Account in Jenkins Dashboad with ID: dockerhub
+#### Create DockerHub Credentials Account in Jenkins Dashboard with ID: dockerhub
  
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/dockerhub.PNG)
  
-#### Set DockerHub Repository Environment Variables
+#### Set DockerHub Repository Environment Variables in Jenkins Dashboard
 
 Navigation: Jenkins ➭ Manage Jenkins ➭ Configure System
 
@@ -132,7 +132,7 @@ Note: Please make sure you have Docker Hub account with same <ORGANIZATION_NAME>
 
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Job%20Name.PNG)
  
-#### Select Job Type : Multibranch Pipeline
+#### Select Job Type: Multibranch Pipeline
  
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Job%20Type.PNG)
  
@@ -158,7 +158,7 @@ Note: Please make sure you have Docker Hub account with same <ORGANIZATION_NAME>
  
 # 7. Validate Application
 
-#### Get k8s-app Loadbalancer URL from k8s cluster
+#### Get k8s-app LoadBalancer URL from k8s cluster
 
 ```bash
 kubectl get services |grep k8s-app
@@ -188,7 +188,7 @@ cd ../terraform-aws-eks/k8s/eks/
 terraform destroy 
 ```
 
-###### #Type "yes" and Enter in Terrform prompt to Decomission all AWS resources created for EKS
+###### #Type "yes" and Enter in Terraform prompt to Decommission all AWS resources created for EKS
 
 
 
