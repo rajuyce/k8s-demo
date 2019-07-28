@@ -1,11 +1,9 @@
 
-# This is a demo for deploying sample application on Kubernetes Cluster
-
-This is a demo for deploying sample application on Kubernetes Cluster
+# This is a demo for deploying sample application on Non Production Kubernetes Cluster
 
 Steps
 1. Prparation
-2. clone git code repository
+2. Clone git code repository
 3. Launch EKS cluster in AWS
 4. Deploy Jenkins on EKS cluster
 5. Configure Jenkins pipeline job
@@ -45,7 +43,7 @@ mv heptio-authenticator-aws_0.3.0_linux_amd64 /usr/local/bin/aws-iam-authenticat
 ```
 
 
-# 2. clone git code repository
+# 2. Clone git code repository
 
 ```bash
 git clone https://github.com/ynraju4/k8s-demo.git
@@ -89,18 +87,20 @@ kubectl get services |grep jenkins
 
 Access Jenkins Dashboard
 
-Create DitHub Credentials Account in Jenkins Dashboad
+Create DitHub Credentials Account in Jenkins Dashboad with ID: GitHub
  
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/GitHub.PNG)
  
-Create DockerHub Credentials Account in Jenkins Dashboad
+Create DockerHub Credentials Account in Jenkins Dashboad with ID: dockerhub
  
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/dockerhub.PNG)
  
 Set DockerHub Repository Environment Variables
- 
+
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Environment_Variables.PNG)
- 
+
+Note: Please make sure you have Docker Hub account with same <ORGANIZATION_NAME>/<SERVICE_NAME>
+
 Create New Job
  
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Create%20New%20job.PNG)
@@ -132,6 +132,12 @@ Run Pipeline Job
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Pipeline%20Log.PNG)
  
 # 7. Validate Application
+
+Get k8s-app Loadbalancer URL from k8s cluster
+
+```bash
+kubectl get services |grep k8s-app
+```
  
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/DryRUN%20No.1.PNG)
  
