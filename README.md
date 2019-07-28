@@ -1,6 +1,8 @@
 
 # This is a demo for deploying sample application on Non Production Kubernetes Cluster
 
+Note: Please Fork k8s-demo Repository to your GitHub account to execute all the steps without any issues.
+
 Steps
 1. Prparation
 2. Clone git code repository
