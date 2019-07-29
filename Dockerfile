@@ -2,7 +2,7 @@
 From tomcat:9-jre11
 
 #Maintainer
-MAINTAINER Nagarju Yarlagadda "ynraju4@gmail.com"
+MAINTAINER Nagaraju Yarlagadda "ynraju4@gmail.com"
 
 EXPOSE 8080
 
