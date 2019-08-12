@@ -22,8 +22,8 @@ Note: Please Fork k8s-demo Repository to your GitHub account to execute all the 
 
 ```bash
 wget https://releases.hashicorp.com/terraform/0.12.5/terraform_0.12.5_linux_amd64.zip
-unzip terraform_0.12.5_linux_amd64.zip
-mv terraform /usr/local/bin
+sudo unzip terraform_0.12.5_linux_amd64.zip
+sudo mv terraform /usr/local/bin
 ```
 
 #### Configure AWS account which has AdminAccess for all resources
@@ -46,7 +46,7 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 ```bash
 wget https://github.com/kubernetes-sigs/aws-iam-authenticator/releases/download/v0.3.0/heptio-authenticator-aws_0.3.0_linux_amd64
 chmod +x heptio-authenticator-aws_0.3.0_linux_amd64
-mv heptio-authenticator-aws_0.3.0_linux_amd64 /usr/local/bin/aws-iam-authenticator
+sudo mv heptio-authenticator-aws_0.3.0_linux_amd64 /usr/local/bin/aws-iam-authenticator
 ```
 
 # 2. Clone git code repository
