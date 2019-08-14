@@ -49,15 +49,6 @@ chmod +x heptio-authenticator-aws_0.3.0_linux_amd64
 sudo mv heptio-authenticator-aws_0.3.0_linux_amd64 /usr/local/bin/aws-iam-authenticator
 ```
 
-#### Install Helm
-
-```bash
-curl -LO https://git.io/get_helm.sh
-chmod 700 get_helm.sh
-./get_helm.sh
-```
-
-
 # 2. Clone git code repository
 
 ```bash
@@ -92,6 +83,14 @@ kubectl apply -f aws-auth.yml
 ```
 
 # 4. Deploy Jenkins on EKS cluster
+
+#### Install Helm
+
+```bash
+curl -LO https://git.io/get_helm.sh
+chmod 700 get_helm.sh
+./get_helm.sh
+```
 
 #### Note: It's recommended to use Internal LoadBalancer for NodePort to expose Jenkins services
 
