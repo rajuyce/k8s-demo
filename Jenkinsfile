@@ -20,7 +20,8 @@ pipeline {
       }
       stage('Create Application Build') {
          steps {
-            sh '''mvn clean package'''
+            sh '''mvn clean'''
+            sh '''mvn package'''
          }
       }
       stage('Create Docker Image') {
