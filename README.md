@@ -26,7 +26,7 @@ sudo unzip terraform_0.12.5_linux_amd64.zip
 sudo mv terraform /usr/local/bin
 ```
 
-#### Configure AWS account which has AdminAccess for all resources
+#### Configure AWS account which has AdminAccess for all Resources
 
 ```bash
 aws configure
