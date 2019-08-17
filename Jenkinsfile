@@ -25,6 +25,11 @@ pipeline {
       }
 	  stage('Create StorageClass for ElasticSearch') {
           steps {
+                    sh 'envsubst < ${WORKSPACE}/elastic-stack/storageclass-aws.yml | kubectl apply -f -'
+          }
+      }
+	  stage('Deploy ELK Components') {
+          steps {
                     sh 'envsubst < ${WORKSPACE}/elastic-stack/elastic-stack.yaml | kubectl apply -f -'
           }
       }
