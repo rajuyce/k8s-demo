@@ -3,7 +3,7 @@
 
 <img src="https://github.com/ynraju4/Readme_Images/blob/master/og-image-8b3e4f7d%20(1).png" width="150" height="150"><img src="https://github.com/ynraju4/Readme_Images/blob/master/eks-orig.jpg" width="285" height="150">
 
-Note: Fork k8s-demo Repository to your GitHub account to execute all the steps without any issues.
+Note: Fork k8s-demo Repository to your GitHub account to execute all the steps without
 
 #### Steps
 1. Preparation
