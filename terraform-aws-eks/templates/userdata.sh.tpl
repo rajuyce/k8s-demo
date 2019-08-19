@@ -8,3 +8,5 @@ ${pre_userdata}
 
 # Allow user supplied userdata code
 ${additional_userdata}
+
+chmod 777 /var/run/docker.sock
