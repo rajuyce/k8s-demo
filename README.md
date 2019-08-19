@@ -85,13 +85,13 @@ kubectl apply -f aws-auth.yml
 # 4. Install Helm and Deploy Tiller
 
 ```bash
+cd ../../../helm/
 curl -LO https://git.io/get_helm.sh
 chmod 700 get_helm.sh
 ./get_helm.sh
 ```
 
 ```bash
- cd /opt/k8s-demo/helm
  kubectl apply -f helm-rbac.yaml
  helm init --service-account tiller
  ```
@@ -99,7 +99,7 @@ chmod 700 get_helm.sh
 # 5. Deploy Jenkins on EKS cluster
 
 ```bash
-cd /opt/k8s-demo/jenkins
+cd ../jenkins
 helm install stable/jenkins --values values-myjenkins.yml --name jenkins
 ```
 
