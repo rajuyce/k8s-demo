@@ -84,7 +84,7 @@ kubectl apply -f aws-auth.yml
 
 # 4. Deploy Jenkins on EKS cluster
 
-#### Install Helm
+#### Install Helm and Deploy Tiller
 
 ```bash
 curl -LO https://git.io/get_helm.sh
@@ -92,11 +92,17 @@ chmod 700 get_helm.sh
 ./get_helm.sh
 ```
 
+```bash
+ cd /opt/k8s-demo/helm
+ kubectl apply -f helm-rbac.yaml
+ helm init --service-account tiller
+ ```
+
 #### Note: It's recommended to use Internal LoadBalancer for NodePort to expose Jenkins services
 
 ```bash
-cd ../../../jenkins/
-kubectl create -f jenkins.yml
+cd /opt/k8s-demo/jenkins
+helm install stable/jenkins --values values-myjenkins.yml --name jenkins
 ```
 
 #### Please wait for few minutes till pod get create and Nodes join LoadBalancer
@@ -110,8 +116,7 @@ kubectl get all
 ```bash
 kubectl get services |grep jenkins
 ```
-
-# 5. Configure Jenkins pipeline job
+# 5. Deploy ELK pipeline job
 
 #### Access Jenkins Dashboard with Jenkins LoadBalancer
 
@@ -156,6 +161,12 @@ Note: Please make sure you have Docker Hub account with same <ORGANIZATION_NAME>
 #### Verify Jenkinsfile is validated successfully
  
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Jenkinsfilescan.PNG)
+
+# 7 Deploy Prometheus
+
+```bash
+helm install --name monitoring --namespace monitoring stable/prometheus-operator
+```
 
 # 6. Deploy Application
 
