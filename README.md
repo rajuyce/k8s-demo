@@ -201,8 +201,14 @@ kubectl get services |grep k8s-app
 # 8. Delete all the deployments and services from EKS cluster
 
 ```bash
-kubectl delete services jenkins k8s-app
-kubectl delete deployments jenkins k8s-app
+kubectl delete -f kibana/kibana.yaml
+kubectl delete -f elasticsearch/elasticsearch.yaml
+kubectl delete -f fluentd/fluentd.yaml
+kubectl delete -f configmaps/fluentd-config.yaml
+```
+
+```bash
+helm del --purge jenkins
 ```
 
 # 9. Destroy EKS cluster with Terraform 
