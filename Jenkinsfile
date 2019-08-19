@@ -5,7 +5,7 @@ pipeline {
       stage('Preparation') {
          steps {
             cleanWs()
-            git credentialsId: 'GitHub', url: "https://github.com/${ORGANIZATION_NAME}/${REPOSITORY_NAME}"
+            git credentialsId: 'GitHub', url: "https://github.com/${ORGANIZATION_NAME}/${REPOSITORY_K8S}"
          }
       }
 	  stage('Create ConfigMap for Fluentd') {
