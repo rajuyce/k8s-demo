@@ -82,9 +82,7 @@ terraform output config_map_aws_auth > aws-auth.yml
 kubectl apply -f aws-auth.yml
 ```
 
-# 4. Deploy Jenkins on EKS cluster
-
-#### Install Helm and Deploy Tiller
+# 4. Install Helm and Deploy Tiller
 
 ```bash
 curl -LO https://git.io/get_helm.sh
@@ -98,7 +96,7 @@ chmod 700 get_helm.sh
  helm init --service-account tiller
  ```
 
-#### Note: It's recommended to use Internal LoadBalancer for NodePort to expose Jenkins services
+# 5. Deploy Jenkins on EKS cluster
 
 ```bash
 cd /opt/k8s-demo/jenkins
@@ -116,6 +114,7 @@ kubectl get all
 ```bash
 kubectl get services |grep jenkins
 ```
+
 # 5. Deploy ELK pipeline job
 
 #### Access Jenkins Dashboard with Jenkins LoadBalancer
