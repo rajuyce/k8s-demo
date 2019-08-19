@@ -102,6 +102,12 @@ chmod 700 get_helm.sh
 cd ../jenkins
 helm install stable/jenkins --values values-myjenkins.yml --name jenkins
 ```
+# Create RBAC Authentication to Jenkins slave pods
+
+```bash
+cd ../jenkins
+kubectl apply -f rbac-slave.yaml
+```
 
 #### Please wait for few minutes till pod get create and Nodes join LoadBalancer
 
