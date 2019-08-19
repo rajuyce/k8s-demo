@@ -1,5 +1,5 @@
 
-# This is a demo for deploying sample application on EKS-Kubernetes Cluster
+# This is a demo for provisioning EKS-Kubernetes Cluster and deploying ELK Stack
 
 <img src="https://github.com/ynraju4/Readme_Images/blob/master/og-image-8b3e4f7d%20(1).png" width="150" height="150"><img src="https://github.com/ynraju4/Readme_Images/blob/master/eks-orig.jpg" width="285" height="150">
 
