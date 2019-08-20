@@ -163,7 +163,7 @@ Note: GitHub and Docker hub environment variables ORGANIZATION_NAME, REPOSITORY_
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/k8s-demo/pipeline_definition.PNG)
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/k8s-demo/github_reentry.PNG)
  
-###### #Click on "OK" to create Job
+###### #Click on "Save" to create Job
 
 # 7. Deploy ELK Stack on k8s
 
@@ -201,13 +201,19 @@ helm install --name monitoring --namespace monitoring stable/prometheus-operator
 
 #### End Urls after DNS configuration
 ##### Internal
-###### Jenkins: http://jenkins.gofair.in
-###### Kibana: https://kibana.gofair.in
-###### Prometheus: http://prometheus.gofair.in
-###### Rancher: https://prometheus.gofair.in
+
+Jenkins: http://jenkins.gofair.in
+
+Kibana: https://kibana.gofair.in
+
+Prometheus: http://prometheus.gofair.in
+
+Rancher: https://prometheus.gofair.in
+
 
 ##### External
-###### Demo Application: https://www.gofair.in
+
+Demo Application: https://www.gofair.in
 
 # 12. Decommission 
 
