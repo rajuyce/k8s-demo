@@ -177,6 +177,9 @@ Note: GitHub and Docker hub environment variables ORGANIZATION_NAME, REPOSITORY_
 
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/k8s-demo/github-webhook.PNG)
 
+##### Kibana Home Page
+
+![alt text](https://github.com/ynraju4/Readme_Images/blob/master/k8s-demo/Kibana_home_page.PNG)
 
 # 9. Depoly Prometheus on k8s with Helm on k8s (Optional)
 
@@ -188,24 +191,30 @@ helm install --name monitoring --namespace monitoring stable/prometheus-operator
 
 ###### Source Code: https://github.com/ynraju4/mvn-demo.git
 
+##### Maven Application Build status
+
+![alt text](https://github.com/ynraju4/Readme_Images/blob/master/k8s-demo/mvn-demo.PNG)
+
 
  
 # 11. Validate all deployed Componets
 
-#### Get k8s-app LoadBalancer URL from k8s cluster
+#### End Urls after DNS configuration
+##### Internal
+###### Jenkins: http://jenkins.gofair.in
+###### Kibana: https://kibana.gofair.in
+###### Prometheus: http://prometheus.gofair.in
+###### Rancher: https://prometheus.gofair.in
 
-```bash
-kubectl get services |grep k8s-app
-```
- 
-![alt text](https://github.com/ynraju4/Readme_Images/blob/master/DryRUN%20No.1.PNG)
- 
- 
+##### External
+###### Demo Application: https://www.gofair.in
+
 # 12. Decommission 
 
 ###### Delete all the deployments and services from EKS cluster
 
 ```bash
+cd ../elk
 kubectl delete -f kibana/kibana.yaml
 kubectl delete -f elasticsearch/elasticsearch.yaml
 kubectl delete -f fluentd/fluentd.yaml
