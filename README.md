@@ -1,7 +1,7 @@
 
 # This is a demo for provisioning EKS-Kubernetes Cluster and deploying ELK Stack
 
-<img src="https://github.com/ynraju4/Readme_Images/blob/master/og-image-8b3e4f7d%20(1).png" width="150" height="150"><img src="https://github.com/ynraju4/Readme_Images/blob/master/eks-orig.jpg" width="285" height="150"><img src="https://github.com/ynraju4/Readme_Images/blob/master/download.png" width="150" height="150"><img src="https://github.com/ynraju4/Readme_Images/blob/master/Prometheus_software_logo.jpg" width="150" height="150">
+<img src="https://github.com/ynraju4/Readme_Images/blob/master/og-image-8b3e4f7d%20(1).png" width="75" height="75"><img src="https://github.com/ynraju4/Readme_Images/blob/master/eks-orig.jpg" width="142.5" height="75"><img src="https://github.com/ynraju4/Readme_Images/blob/master/download.png" width="75" height="75"><img src="https://github.com/ynraju4/Readme_Images/blob/master/Prometheus_software_logo.jpg" width="75" height="75">
 
 
 
@@ -11,12 +11,14 @@ Note: Fork k8s-demo Repository to your GitHub account to execute all the steps w
 1. Preparation
 2. Clone git code repository
 3. Launch EKS cluster in AWS
-4. Deploy Jenkins on EKS cluster
-5. Configure Jenkins pipeline job
-6. Deploy Application
-7. Validate Application
-8. Delete all the deployments and services from EKS cluster
-9. Destroy EKS cluster with Terraform 
+4. Install Helm and Deploy tiller on k8s
+5. Deploy Jenkins with Helm on k8s
+6. Configure Jenkins pipeline job for ELK 
+7. Deploy ELK Stack on k8s
+8. Depoly Prometheus with Helm on k8s (Optional)
+9. Create CI/CD Pipeline Job for Sample Java Application(optional)
+10. Delete all the deployments and services from EKS cluster
+11. Destroy EKS cluster with Terraform 
 
 #   1. Preparation.
 
@@ -84,7 +86,7 @@ terraform output config_map_aws_auth > aws-auth.yml
 kubectl apply -f aws-auth.yml
 ```
 
-# 4. Install Helm and Deploy Tiller
+# 4. Install Helm and Deploy tiller on k8s
 
 ```bash
 cd ../../../helm/
@@ -98,7 +100,7 @@ chmod 700 get_helm.sh
  helm init --service-account tiller
  ```
 
-# 5. Deploy Jenkins on EKS cluster
+# 5. Deploy Jenkins on k8s with Helm
 
 ```bash
 cd ../jenkins
@@ -122,9 +124,9 @@ kubectl get all
 kubectl get services |grep jenkins
 ```
 
-# 5. Deploy ELK pipeline job
+# 6. Configure Jenkins pipeline job for ELK 
 
-#### Access Jenkins Dashboard with Jenkins LoadBalancer
+#### Login to Jenkins and access Dashboard with Jenkins LoadBalancer
 
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Jenkins_Home_Page.PNG)
 
@@ -150,31 +152,28 @@ Note: Please make sure you have Docker Hub account with same <ORGANIZATION_NAME>
  
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Create%20New%20job.PNG)
 
-![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Job%20Name.PNG)
+#### Select Job Type: Pipeline
  
-#### Select Job Type: Multibranch Pipeline
+![alt text](https://github.com/ynraju4/Readme_Images/blob/master/k8s-demo/job_type.PNG)
  
-![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Job%20Type.PNG)
+#### Configure Source Code Repository
  
-#### Select Source Code Repository Type
+![alt text](https://github.com/ynraju4/Readme_Images/blob/master/k8s-demo/github_entry.PNG)
+![alt text](https://github.com/ynraju4/Readme_Images/blob/master/k8s-demo/githubhook.PNG)
+![alt text](https://github.com/ynraju4/Readme_Images/blob/master/k8s-demo/pipeline_definition.PNG)
+![alt text](https://github.com/ynraju4/Readme_Images/blob/master/k8s-demo/github_reentry.PNG)
  
-![alt text](https://github.com/ynraju4/Readme_Images/blob/master/add%20source.PNG)
- 
-#### Select Source Code Repository
- 
-![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Git%20Soruce.PNG)
- 
-#### Verify Jenkinsfile is validated successfully
- 
-![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Jenkinsfilescan.PNG)
+###### #Click on "OK" to create Job
 
-# 7 Deploy Prometheus
+# 7. Deploy ELK Stack on k8s
+
+# 8. Depoly Prometheus on k8s with Helm on k8s (Optional)
 
 ```bash
 helm install --name monitoring --namespace monitoring stable/prometheus-operator
 ```
 
-# 6. Deploy Application
+# 9. Create CI/CD Pipeline Job for Sample Java Application(optional)
 
 #### Run Pipeline Job
  
@@ -182,7 +181,7 @@ helm install --name monitoring --namespace monitoring stable/prometheus-operator
  
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Pipeline%20Log.PNG)
  
-# 7. Validate Application
+# 10. Validate all deployed Componets
 
 #### Get k8s-app LoadBalancer URL from k8s cluster
 
@@ -200,7 +199,7 @@ kubectl get services |grep k8s-app
  
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/DryRUN%20No.2.PNG)
  
-# 8. Delete all the deployments and services from EKS cluster
+# 11. Delete all the deployments and services from EKS cluster
 
 ```bash
 kubectl delete -f kibana/kibana.yaml
@@ -213,7 +212,7 @@ kubectl delete -f configmaps/fluentd-config.yaml
 helm del --purge jenkins
 ```
 
-# 9. Destroy EKS cluster with Terraform 
+# 12. Destroy EKS cluster with Terraform 
 
 ```bash
 cd ../terraform-aws-eks/k8s/eks/
