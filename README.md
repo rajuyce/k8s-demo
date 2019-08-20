@@ -12,13 +12,13 @@ Note: Fork k8s-demo Repository to your GitHub account to execute all the steps w
 2. Clone git code repository
 3. Launch EKS cluster in AWS
 4. Install Helm and Deploy tiller on k8s
-5. Deploy Jenkins with Helm on k8s
+5. Deploy Jenkins on k8s with Helm
 6. Configure Jenkins pipeline job for ELK 
 7. Deploy ELK Stack on k8s
 8. Depoly Prometheus with Helm on k8s (Optional)
 9. Create CI/CD Pipeline Job for Sample Java Application(optional)
-10. Delete all the deployments and services from EKS cluster
-11. Destroy EKS cluster with Terraform 
+10. Validate all deployed Componets
+11. Decommission
 
 #   1. Preparation.
 
@@ -167,21 +167,21 @@ Note: Please make sure you have Docker Hub account with same <ORGANIZATION_NAME>
 
 # 7. Deploy ELK Stack on k8s
 
-# 8. Depoly Prometheus on k8s with Helm on k8s (Optional)
+![alt text](https://github.com/ynraju4/Readme_Images/blob/master/k8s-demo/Build_now.PNG)
+
+# 8. Create webhook for ELK stack CI/CD Pipline
+
+# 9. Depoly Prometheus on k8s with Helm on k8s (Optional)
 
 ```bash
 helm install --name monitoring --namespace monitoring stable/prometheus-operator
 ```
 
-# 9. Create CI/CD Pipeline Job for Sample Java Application(optional)
+# 10. Create CI/CD Pipeline Job for Sample Java Application(optional)
 
-#### Run Pipeline Job
+###### Source Code: https://github.com/ynraju4/mvn-demo.git
  
-![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Run%20Job.PNG)
- 
-![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Pipeline%20Log.PNG)
- 
-# 10. Validate all deployed Componets
+# 11. Validate all deployed Componets
 
 #### Get k8s-app LoadBalancer URL from k8s cluster
 
@@ -191,15 +191,10 @@ kubectl get services |grep k8s-app
  
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/DryRUN%20No.1.PNG)
  
-#### Edit Source Code
  
-![alt text](https://github.com/ynraju4/Readme_Images/blob/master/edit_index.PNG)
- 
-#### Run Jenkins pipeline job and Validate Application Access again
- 
-![alt text](https://github.com/ynraju4/Readme_Images/blob/master/DryRUN%20No.2.PNG)
- 
-# 11. Delete all the deployments and services from EKS cluster
+# 12. Decommission 
+
+###### Delete all the deployments and services from EKS cluster
 
 ```bash
 kubectl delete -f kibana/kibana.yaml
@@ -212,7 +207,7 @@ kubectl delete -f configmaps/fluentd-config.yaml
 helm del --purge jenkins
 ```
 
-# 12. Destroy EKS cluster with Terraform 
+######. Destroy EKS cluster with Terraform 
 
 ```bash
 cd ../terraform-aws-eks/k8s/eks/
