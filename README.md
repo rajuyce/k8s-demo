@@ -203,12 +203,9 @@ helm install --name monitoring --namespace monitoring stable/prometheus-operator
 ##### Internal
 
 Jenkins: http://jenkins.gofair.in
-
 Kibana: https://kibana.gofair.in
-
 Prometheus: http://prometheus.gofair.in
-
-Rancher: https://prometheus.gofair.in
+Rancher: https://rancher.gofair.in
 
 
 ##### External
