@@ -1,7 +1,7 @@
 
 # This is a demo for provisioning EKS-Kubernetes Cluster and deploying ELK Stack
 
-<img src="https://github.com/ynraju4/Readme_Images/blob/master/og-image-8b3e4f7d%20(1).png" width="75" height="75"><img src="https://github.com/ynraju4/Readme_Images/blob/master/eks-orig.jpg" width="142.5" height="75"><img src="https://github.com/ynraju4/Readme_Images/blob/master/download.png" width="75" height="75"><img src="https://github.com/ynraju4/Readme_Images/blob/master/Prometheus_software_logo.jpg" width="75" height="75">
+<img src="https://github.com/ynraju4/Readme_Images/blob/master/og-image-8b3e4f7d%20(1).png" width="75" height="75"><img src="https://github.com/ynraju4/Readme_Images/blob/master/eks-orig.jpg" width="142.5" height="75"><img src="https://github.com/ynraju4/Readme_Images/blob/master/k8s-demo/headshot.png" width="75" height="75"><img src="https://github.com/ynraju4/Readme_Images/blob/master/download.png" width="75" height="75"><img src="https://github.com/ynraju4/Readme_Images/blob/master/Prometheus_software_logo.jpg" width="75" height="75">
 
 
 
