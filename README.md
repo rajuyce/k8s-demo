@@ -202,9 +202,9 @@ helm install --name monitoring --namespace monitoring stable/prometheus-operator
 #### End Urls after DNS configuration
 ##### Internal
 
-Jenkins: http://jenkins.gofair.in
-Kibana: https://kibana.gofair.in
-Prometheus: http://prometheus.gofair.in
+Jenkins: http://jenkins.gofair.in \
+Kibana: https://kibana.gofair.in \
+Prometheus: http://prometheus.gofair.in \
 Rancher: https://rancher.gofair.in
 
 
