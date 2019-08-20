@@ -104,7 +104,7 @@ chmod 700 get_helm.sh
 
 ```bash
 cd ../jenkins
-helm install stable/jenkins --values values-myjenkins.yml --name jenkins
+helm install stable/jenkins --values values-jenkins.yml --name jenkins
 ```
 #### Create RBAC Authentication to Jenkins slave pods
 
