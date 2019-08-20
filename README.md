@@ -144,9 +144,9 @@ Navigation: Jenkins ➭ Credentials ➭ System ➭ Global credentials (unrestric
 
 Navigation: Jenkins ➭ Manage Jenkins ➭ Configure System
 
-Note: Please make sure you have Docker Hub account with same <ORGANIZATION_NAME>/<REPOSITORY_NAME>
+Note: GitHub and Docker hub environment variables ORGANIZATION_NAME, REPOSITORY_K8S, REPOSITORY_MVN
 
-![alt text](https://github.com/ynraju4/Readme_Images/blob/master/Environment_Variables.PNG)
+![alt text](https://github.com/ynraju4/Readme_Images/blob/master/k8s-demo/env_variables.PNG)
 
 #### Create New Pipeline Job
  
@@ -169,7 +169,14 @@ Note: Please make sure you have Docker Hub account with same <ORGANIZATION_NAME>
 
 ![alt text](https://github.com/ynraju4/Readme_Images/blob/master/k8s-demo/Build_now.PNG)
 
-# 8. Create webhook for ELK stack CI/CD Pipline
+##### Build status
+
+![alt text](https://github.com/ynraju4/Readme_Images/blob/master/k8s-demo/eks_build_status.PNG)
+
+# 8. Create GitHub webhook for ELK stack CI/CD Pipline
+
+![alt text](https://github.com/ynraju4/Readme_Images/blob/master/k8s-demo/github-webhook.PNG)
+
 
 # 9. Depoly Prometheus on k8s with Helm on k8s (Optional)
 
@@ -180,6 +187,8 @@ helm install --name monitoring --namespace monitoring stable/prometheus-operator
 # 10. Create CI/CD Pipeline Job for Sample Java Application(optional)
 
 ###### Source Code: https://github.com/ynraju4/mvn-demo.git
+
+
  
 # 11. Validate all deployed Componets
 
