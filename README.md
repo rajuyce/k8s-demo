@@ -1,5 +1,5 @@
 
-# Provisioning AWS EKS Cluster and deploying Jenkins with slave pods, EFK Stack, Prometheus and Sample Web Application on K8S
+# Provisioning AWS EKS Cluster with Terraform and deploying Jenkins with slave pods, EFK Stack, Prometheus and Sample Web Application on K8S
 
 <img src="https://github.com/ynraju4/Readme_Images/blob/master/og-image-8b3e4f7d%20(1).png" width="100" height="100"><img src="https://github.com/ynraju4/Readme_Images/blob/master/eks-orig.jpg" width="190" height="100"><img src="https://github.com/ynraju4/Readme_Images/blob/master/k8s-demo/headshot.png" width="75" height="75"><img src="https://github.com/ynraju4/Readme_Images/blob/master/download.png" width="100" height="100"><img src="https://github.com/ynraju4/Readme_Images/blob/master/Prometheus_software_logo.jpg" width="100" height="100">
 
