@@ -200,6 +200,7 @@ helm install --name monitoring --namespace monitoring stable/prometheus-operator
 # 11. Validate all deployed Componets
 
 #### End Urls after DNS configuration
+###### Note: Considering security we will not be exposing cluster maintenance applications and internal applications to the external loadbalancers. This is just a demo 
 ##### Internal
 
 Jenkins: http://jenkins.gofair.in \
