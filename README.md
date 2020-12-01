@@ -5,7 +5,7 @@
 
 
 
-Note: Fork k8s-demo Repository to your GitHub account to execute all the steps without 
+Note: Fork k8s-demo Repository to your GitHub account to execute all the steps without any issues
 
 #### Steps
 1. Preparation
