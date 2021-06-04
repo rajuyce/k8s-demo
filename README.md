@@ -25,9 +25,7 @@ Note: Fork k8s-demo Repository to your GitHub account to execute all the steps w
 #### Install Terraform
 
 ```bash
-wget https://releases.hashicorp.com/terraform/0.12.5/terraform_0.12.5_linux_amd64.zip
-sudo unzip terraform_0.12.5_linux_amd64.zip
-sudo mv terraform /usr/local/bin
+tfenv install 0.14.11
 ```
 
 #### Configure AWS account which has AdminAccess for all Resources
@@ -39,18 +37,13 @@ aws configure
 #### Install kubectl 
 
 ```bash
-
-curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
-chmod +x ./kubectl
-sudo mv ./kubectl /usr/local/bin/kubectl
+brew install kubernetes-cli
 ```
 
 #### Install aws-iam-authenticator
 
 ```bash
-wget https://github.com/kubernetes-sigs/aws-iam-authenticator/releases/download/v0.3.0/heptio-authenticator-aws_0.3.0_linux_amd64
-chmod +x heptio-authenticator-aws_0.3.0_linux_amd64
-sudo mv heptio-authenticator-aws_0.3.0_linux_amd64 /usr/local/bin/aws-iam-authenticator
+brew install aws-iam-authenticator
 ```
 
 # 2. Clone git code repository
